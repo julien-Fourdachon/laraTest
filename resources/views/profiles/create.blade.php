@@ -5,35 +5,37 @@
  <div class="col-sm-8 offset-sm-2">
     <h1 class="display-3">Add a profile</h1>
   <div>
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      </div><br />
-    @endif
       <form method="post" action="{{ route('profiles.store') }}">
         @csrf
           <div class="form-group">    
-              <label for="first_name">First Name:</label>
-              <input type="text" class="form-control" name="first_name" {{ $errors->has('first_name') ? 'is-invalid' : '' }}  placeholder="Votre nom"/>
-              {!! $errors->first('first_name', '<div class="invalid-feedback">:message</div>') !!}
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name"/>
+                @error('first_name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
           </div>
 
           <div class="form-group">
               <label for="last_name">Last Name:</label>
-              <input type="text" class="form-control" name="last_name"/>
+              <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name"/>
+              @error('last_name')
+              <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           </div>
 
           <div class="form-group">
               <label for="image">Image:</label>
-              <input type="text" class="form-control" name="image"/>
+              <input type="text" class="form-control  @error('image') is-invalid @enderror"  name="image"/>
+              @error('image')
+              <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           </div>
           <div class="form-group">
               <label for="description">Description:</label>
-              <input type="text" class="form-control" name="description"/>
+              <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"/>
+              @error('description')
+              <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           </div>                        
           <button type="submit" class="btn btn-primary-outline">Add profile</button>
       </form>
