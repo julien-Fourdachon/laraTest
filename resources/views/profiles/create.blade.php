@@ -32,12 +32,12 @@
           </div>
           <div class="form-group">
               <label for="description">Description:</label>
-              <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"/>
+              <textarea class="form-control @error('description') is-invalid @enderror" name="description"></textarea>
               @error('description')
               <div class="alert alert-danger">{{ $message }}</div>
           @enderror
           </div>                        
-          <button type="submit" class="btn btn-primary-outline">Add profile</button>
+          <button type="submit" class="btn btn-primary">Add profile</button>
       </form>
   </div>
 </div>

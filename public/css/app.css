@@ -447,6 +447,7 @@ h6,
   font-size: 4.5rem;
   font-weight: 300;
   line-height: 1.2;
+  text-align: center;
 }
 
 .display-4 {
@@ -2173,6 +2174,7 @@ textarea.form-control {
 .new {
   display: flex;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .form-check-inline {
@@ -10695,6 +10697,39 @@ a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+}
+
+.nav-tabs {
+  display:none;
+}
+
+@media(min-width:768px) {
+  .nav-tabs {
+      display: flex;
+  }
+
+  .card {
+      border: none;
+  }
+
+  .card .card-header {
+      display:none;
+  }  
+
+  .card .collapse{
+      display:block;
+  }
+}
+
+@media(max-width:767px){
+  /*
+   * Changed selector to `.tab-content > .tab-pane` to override `.fade:not(.show)`
+   * In BS4 Beta `.tab-pane`s were rendered hidden by just `.fade`
+   */
+  .tab-content > .tab-pane {
+      display: block;
+      opacity: 1;
   }
 }
 
