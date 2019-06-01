@@ -176,9 +176,10 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #f2f4f6;
   text-decoration: none;
   background-color: transparent;
+  font-weight: bold;
 }
 
 a:hover {
@@ -4840,8 +4841,8 @@ input[type=button].btn-block {
 
 .card-header {
  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.08);
+  margin-bottom: 0.5em;
+  background-color: rgba(43, 76, 224, 0.424);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -10768,7 +10769,11 @@ a.text-dark:focus {
   }
 
   h5 {
-    padding-top: -15em;
+    padding-bottom: 1.5em;
+  }
+
+  .back {
+    background-color: #0a3feb32;
   }
 }
 
@@ -10779,14 +10784,8 @@ a.text-dark:focus {
 }
 
 .new {
-  margin-bottom: 1em;
-  margin-right: 4em;
+  margin-bottom: 2em;
   font-weight: bold;
   text-align: center;
-}
-
-.star_list {
-  height: 40em;
-  overflow: auto;
 }
 

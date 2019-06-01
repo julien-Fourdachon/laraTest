@@ -3,13 +3,12 @@
 @section('main')
 <div class="row">
     <h1 class="display-3 col-12">Wiki stars</h1>
-    <div class="new col-12">
-        <a href="{{ route('profiles.create')}}" class="btn btn-primary new">Add New Profile</a>
+    <div class="new col-xs-12 col-md-3">
+        <a href="{{ route('profiles.create')}}" class="btn btn-primary">Add New Profile</a>
     </div>
     <tbody>
         <div class="container">
             <div class="row">
-                <div class="star_list">
                 <ul id="tabs" class="nav nav-tabs col-md-3" role="tablist">
                     @foreach($profiles as $profile)
                     <li class="nav-item">
@@ -20,14 +19,13 @@
                     </li>
                     @endforeach
                 </ul>
-                </div>
                 <div id="content" class="tab-content col-md-9" role="tablist">
                     @foreach($profiles as $profile)
                     <div id="pane-{{ $profile->id }}" class="card tab-pane fade back" role="tabpanel"
                         aria-labelledby="tab-{{ $profile->id }}">
                         <div class="card-header" role="tab" id="heading-{{ $profile->id }}">
                             <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" href="#collapse-{{ $profile->id }}"
+                                <a class="collapsed list-name" data-toggle="collapse" href="#collapse-{{ $profile->id }}"
                                     aria-expanded="false" aria-controls="collapse-{{ $profile->id }}">
                                     {{ $profile->first_name }} {{ $profile->last_name }}
                                 </a>
