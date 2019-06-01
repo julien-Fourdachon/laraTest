@@ -73,6 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
+  background-image: url('https://wallpapercave.com/wp/heuAS0w.jpg')
 }
 
 [tabindex="-1"]:focus {
@@ -96,9 +97,13 @@ h6 {
   text-align: center;
 }
 
+h1 {
+  color: #4ca2e9;
+  padding-bottom: 1em;
+}
+
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 1em 1em 1em 1em;
 }
 
 abbr[title],
@@ -109,7 +114,7 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 0;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
 }
 
 address {
@@ -220,6 +225,8 @@ img {
   float: left;
   margin-right: 2%;
   margin-bottom:2%;
+  max-width: 350px;
+  padding: 0.5em 0 0 1em;
 }
 
 svg {
@@ -1101,7 +1108,6 @@ pre code {
 
   .col-md-3 {
     flex: 0 0 25%;
-    max-width: 25%;
   }
 
   .col-md-4 {
@@ -2171,11 +2177,6 @@ textarea.form-control {
   overflow: scroll;
   margin-left: 10px;
   padding-right: 10px;
-}
-
-.new {
-  margin-bottom: 2em;
-  text-align: center;
 }
 
 .form-check-inline {
@@ -4304,6 +4305,13 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  text-align: justify;
+  color: #f8f9fa;
+  font-weight: bold;
+  background-color: #84b0f5;
+  margin-bottom: 0.2em;
+  border-radius: 25px 10px;
+  max-width: 15em;
 }
 
 .nav-link:hover,
@@ -4318,7 +4326,7 @@ input[type=button].btn-block {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 0px solid #dee2e6;
 }
 
 .nav-tabs .nav-item {
@@ -4326,14 +4334,13 @@ input[type=button].btn-block {
 }
 
 .nav-tabs .nav-link {
-  border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border: 1px solid black;
 }
 
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;
+  border-radius: 25px 10px;
 }
 
 .nav-tabs .nav-link.disabled {
@@ -4344,8 +4351,9 @@ input[type=button].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  background-color: #f8fafc;
+  background-color: #2247c0;
   border-color: #dee2e6 #dee2e6 #f8fafc;
+  border-radius: 25px 10px;
 }
 
 .nav-tabs .dropdown-menu {
@@ -4831,9 +4839,9 @@ input[type=button].btn-block {
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+ padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -8202,6 +8210,9 @@ button.bg-dark:focus {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ml-0,
@@ -10719,15 +10730,16 @@ a.text-dark:focus {
       display:block;
   }
 
+  .back {
+    background-color: #0a3feb32;
+    max-height: 40em;
+    overflow: auto;
+  }
+
   #tabs {
     display: flex;
     flex-direction: column;
-  }
-
-  .card-body {
-    position: absolute;
-    left: 25%;
-    top: -300px ;
+    margin-top: 1em;
   }
 }
 
@@ -10749,6 +10761,32 @@ a.text-dark:focus {
   img {
     height: 200px;
     width: 170px;
+    float: left;
   }
+  .edit {
+    justify-content: space-around;
+  }
+
+  h5 {
+    padding-top: -15em;
+  }
+}
+
+.edit {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 1em 1em;
+}
+
+.new {
+  margin-bottom: 1em;
+  margin-right: 4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.star_list {
+  height: 40em;
+  overflow: auto;
 }
 

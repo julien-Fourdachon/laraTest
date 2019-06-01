@@ -7,35 +7,39 @@
         <div>
             <form method="post" action="{{ route('profiles.store') }}">
                 @csrf
-                <div class="form-group">    
+                <div class="form-group">
                     <label for="first_name">First Name:</label>
-                    <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name"/>
+                    <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name"
+                        maxlength="255" value="{{ old('first_name') }}" />
                     @error('first_name')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name"/>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name"
+                        maxlength="255" value="{{ old('last_name') }}" />
                     @error('last_name')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="image">Image:</label>
-                    <input type="text" class="form-control  @error('image') is-invalid @enderror"  name="image"/>
+                    <input type="text" class="form-control  @error('image') is-invalid @enderror" name="image"
+                        maxlength="255" value="{{ old('image') }}" />
                     @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea class="form-control @error('description') is-invalid @enderror" name="description"></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror"
+                        name="description">{{old('description')}}</textarea>
                     @error('description')
-                        <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                </div>                        
+                </div>
                 <button type="submit" class="btn btn-primary">Add profile</button>
             </form>
         </div>
