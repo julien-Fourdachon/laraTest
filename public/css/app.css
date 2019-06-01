@@ -91,8 +91,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
+  margin-top: 5;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 p {
@@ -216,8 +217,9 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
-  height: 200px;
-  width: 180px;
+  float: left;
+  margin-right: 2%;
+  margin-bottom:2%;
 }
 
 svg {
@@ -2172,9 +2174,8 @@ textarea.form-control {
 }
 
 .new {
-  display: flex;
-  justify-content: center;
   margin-bottom: 2em;
+  text-align: center;
 }
 
 .form-check-inline {
@@ -4343,11 +4344,8 @@ input[type=button].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #e2e3e5;
   background-color: #f8fafc;
   border-color: #dee2e6 #dee2e6 #f8fafc;
-  background-color: #6c757d;
-  text-align: center;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10720,6 +10718,17 @@ a.text-dark:focus {
   .card .collapse{
       display:block;
   }
+
+  #tabs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body {
+    position: absolute;
+    left: 25%;
+    top: -300px ;
+  }
 }
 
 @media(max-width:767px){
@@ -10730,6 +10739,16 @@ a.text-dark:focus {
   .tab-content > .tab-pane {
       display: block;
       opacity: 1;
+  }
+
+  .card-body {
+    max-height: 300px;
+    overflow: scroll;
+  }
+
+  img {
+    height: 200px;
+    width: 170px;
   }
 }
 

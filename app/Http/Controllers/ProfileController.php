@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProfile;
 
 use App\Profile;
 
@@ -33,26 +33,12 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreProfile  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProfile $request)
     {
-        $this->validate(
-            $request,
-            [
-                'first_name' => 'required|max:255',
-                'last_name' => 'required|max:255',
-                'image' => 'required|max:255',
-                'description' => 'required'
-            ],
-            [
-                'first_name.required' => 'Please enter a first-name',
-                'last_name.required' => 'Please enter a last-name',
-                'image.required' => 'Please enter an image',
-                'description.required' => 'Please enter a description'
-            ]
-        );
+        $validated = $request->validated();
 
         $profile = new Profile([
             'first_name' => $request->get('first_name'),
@@ -90,19 +76,13 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreProfile  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProfile $request, $id)
     {
-        $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'image'=>'required',
-            'description' => 'required'
-        ]);
-
+        $validated = $request->validated();
 
         $profile = Profile::find($id);
         $profile->first_name =  $request->get('first_name');
