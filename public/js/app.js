@@ -49444,3 +49444,8 @@ module.exports = __webpack_require__(/*! /home/linux/code/demo/resources/sass/ap
 /***/ })
 
 /******/ });
+
+$(function() {
+  console.log("salitas;lidhafgsd");
+});
+

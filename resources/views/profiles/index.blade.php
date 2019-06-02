@@ -12,7 +12,7 @@
                 <ul id="tabs" class="nav nav-tabs col-md-3" role="tablist">
                     @foreach($profiles as $profile)
                     <li class="nav-item">
-                        <a id="tab-{{ $profile->id }}" href="#pane-{{ $profile->id }}" class="nav-link"
+                        <a id="tab-{{ $profile->id }}" href="#pane-{{ $profile->id }}" class="nav-link {{ $loop->first ? 'active' : '' }}"
                             data-toggle="tab" role="tab">
                             {{ $profile->first_name }} {{ $profile->last_name }}
                         </a>
@@ -21,7 +21,7 @@
                 </ul>
                 <div id="content" class="tab-content col-md-9" role="tablist">
                     @foreach($profiles as $profile)
-                    <div id="pane-{{ $profile->id }}" class="card tab-pane fade back" role="tabpanel"
+                    <div id="pane-{{ $profile->id }}" class="card tab-pane fade back {{ $loop->first ? 'active show' : '' }}" role="tabpanel"
                         aria-labelledby="tab-{{ $profile->id }}">
                         <div class="card-header" role="tab" id="heading-{{ $profile->id }}">
                             <h5 class="mb-0">
