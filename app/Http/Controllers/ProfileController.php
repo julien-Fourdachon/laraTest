@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::all();
+        $profiles = Profile::all()->sortBy('last_name');
 
         return view('profiles.index', compact('profiles'));
     }
@@ -41,8 +41,9 @@ class ProfileController extends Controller
         $validated = $request->validated();
 
         $profile = new Profile([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
+            // First letter to upper case for sorting by name
+            'first_name' => \ucfirst($request->get('first_name')),
+            'last_name' => \ucfirst($request->get('last_name')),
             'image' => $request->get('image'),
             'description' => $request->get('description')
         ]);

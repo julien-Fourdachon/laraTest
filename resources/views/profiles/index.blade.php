@@ -3,7 +3,7 @@
 @section('main')
 <div class="row">
     <h1 class="display-3 col-12">Wiki stars</h1>
-    <div class="new col-xs-12 col-md-3">
+    <div class="new col-12">
         <a href="{{ route('profiles.create')}}" class="btn btn-primary">Add New Profile</a>
     </div>
     <tbody>

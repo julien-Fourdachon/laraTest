@@ -4301,6 +4301,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  overflow: scroll;
 }
 
 .nav-link {
@@ -4842,7 +4843,7 @@ input[type=button].btn-block {
 .card-header {
  padding: 0.75rem 1.25rem;
   margin-bottom: 0.5em;
-  background-color: rgba(43, 76, 224, 0.424);
+  background-color: #84b0f5;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -10775,17 +10776,29 @@ a.text-dark:focus {
   .back {
     background-color: #0a3feb32;
   }
+
+  .collapse{
+    max-height:40em;
+    overflow: auto;
+}
+
 }
 
 .edit {
   display: flex;
   flex-direction: row;
   padding: 0 0 1em 1em;
+  justify-content: center;
 }
 
 .new {
   margin-bottom: 2em;
   font-weight: bold;
   text-align: center;
+}
+
+.submit {
+  display: flex;
+  justify-content: space-evenly;
 }
 
