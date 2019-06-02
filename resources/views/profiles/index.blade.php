@@ -12,8 +12,8 @@
                 <ul id="tabs" class="nav nav-tabs col-md-3" role="tablist">
                     @foreach($profiles as $profile)
                     <li class="nav-item">
-                        <a id="tab-{{ $profile->id }}" href="#pane-{{ $profile->id }}" class="nav-link {{ $loop->first ? 'active' : '' }}"
-                            data-toggle="tab" role="tab">
+                        <a id="tab-{{ $profile->id }}" href="#pane-{{ $profile->id }}"
+                            class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="tab" role="tab">
                             {{ $profile->first_name }} {{ $profile->last_name }}
                         </a>
                     </li>
@@ -21,12 +21,14 @@
                 </ul>
                 <div id="content" class="tab-content col-md-9" role="tablist">
                     @foreach($profiles as $profile)
-                    <div id="pane-{{ $profile->id }}" class="card tab-pane fade back {{ $loop->first ? 'active show' : '' }}" role="tabpanel"
+                    <div id="pane-{{ $profile->id }}"
+                        class="card tab-pane fade back {{ $loop->first ? 'active show' : '' }}" role="tabpanel"
                         aria-labelledby="tab-{{ $profile->id }}">
                         <div class="card-header" role="tab" id="heading-{{ $profile->id }}">
                             <h5 class="mb-0">
-                                <a class="collapsed list-name" data-toggle="collapse" href="#collapse-{{ $profile->id }}"
-                                    aria-expanded="false" aria-controls="collapse-{{ $profile->id }}">
+                                <a class="collapsed list-name" data-toggle="collapse"
+                                    href="#collapse-{{ $profile->id }}" aria-expanded="false"
+                                    aria-controls="collapse-{{ $profile->id }}">
                                     {{ $profile->first_name }} {{ $profile->last_name }}
                                 </a>
                             </h5>
@@ -41,7 +43,8 @@
                                 <form action="{{ route('profiles.destroy', $profile->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
+                                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')"
+                                        type="submit">Delete</button>
                                 </form>
                             </div>
                         </div>

@@ -41,8 +41,8 @@
                     @enderror
                 </div>
                 <div class="submit">
-                <button type="submit" class="btn btn-primary">Add profile</button>
-                <a href="{{ route('profiles.index')}}" class="btn btn-primary">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Add profile</button>
+                    <a href="{{ route('profiles.index')}}" class="btn btn-primary">Cancel</a>
                 </div>
             </form>
         </div>
